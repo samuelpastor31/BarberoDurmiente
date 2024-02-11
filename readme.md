@@ -16,15 +16,15 @@ Implementar una solución al clásico problema de concurrencia del barbero dormi
 
 ## 2. Contexto
 
-En una barbería hay un barbero, una silla de barbero, y N sillas para los clientes esperar si el barbero está ocupado. Si no hay clientes, el barbero se sienta en la silla y se duerme. Cuando llega un cliente, este tiene que despertar al barbero si está dormido o, si el barbero está atendiendo a otro cliente, esperar en una de las sillas disponibles. Si todas las sillas están ocupadas, el cliente se va.
+En una barbería hay un barbero, una silla de barbero, y N (Para este ejemplo 5) sillas para los clientes esperar si el barbero está ocupado. Si no hay clientes, el barbero se sienta en la silla y se duerme. Cuando llega un cliente, este tiene que despertar al barbero si está dormido o, si el barbero está atendiendo a otro cliente, esperar en una de las sillas disponibles. Si todas las sillas están ocupadas, el cliente se va.
 
 ## 3. Requisitos
 
 1. **Barbero y Clientes:** Deben ser representados por hilos separados.
 2. **Sincronización:** Utiliza [`ReentrantLock`][ReentrantLock] y [`Condition`][Condition] para sincronizar el acceso a la silla del barbero y la espera de los clientes.
-3. **Entrada Aleatoria:** Los clientes deben llegar en momentos aleatorios.
-4. **Tiempo de Corte Aleatorio:** El barbero toma un tiempo aleatorio para cortar el cabello a cada cliente.
-5. **Cola de Espera:** Implementa una cola para gestionar los clientes que esperan.
+3. **Entrada Aleatoria:** Los clientes deben llegar en momentos aleatorios, por ejemplo entre 5 y 10 segundos.
+4. **Tiempo de Corte Aleatorio:** El barbero toma un tiempo aleatorio para cortar el cabello a cada cliente. Entre 10 y 15 segundos.
+5. **Cola de Espera:** Implementa una cola para gestionar los clientes que esperan. Esta cola en una primera aproximación puede realizarse como lo que hemos visto en clase de utilizar una [`LinkedList`][LinkedList] por ejemplo, pero en el desarrollo se va a proponer una solución más eficiente.
 
 ## 4. Tareas
 
@@ -77,9 +77,11 @@ Tu programa debe compilar y ejecutarse sin errores, mostrando en la consola el f
 * [Condition]
 * [Semaphore]
 * [ThreadLocalRandom]
+* [LinkedList]
 
 [Thread]: https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html
 [ReentrantLock]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/ReentrantLock.html
 [Condition]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/Condition.html
 [Semaphore]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Semaphore.html
 [ThreadLocalRandom]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html
+[LinkedList]: https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html
