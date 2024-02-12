@@ -6,7 +6,8 @@
 * [4. Tareas](#4-tareas)
 * [5. Esquema para Trabajar](#5-esquema-para-trabajar)
 * [6. Entrega](#6-entrega)
-* [7. Referencias](#7-referencias)
+* [7. Consideraciones](#7-consideraciones)
+* [8. Referencias](#8-referencias)
 
 ![El Barbero Durmiente](md_media/Barbero.webp)
 
@@ -24,16 +25,18 @@ En una barbería hay un barbero, una silla de barbero, y N (Para este ejemplo 5)
 2. **Sincronización:** Utiliza [`ReentrantLock`][ReentrantLock] y [`Condition`][Condition] para sincronizar el acceso a la silla del barbero y la espera de los clientes.
 3. **Entrada Aleatoria:** Los clientes deben llegar en momentos aleatorios, por ejemplo entre 5 y 10 segundos.
 4. **Tiempo de Corte Aleatorio:** El barbero toma un tiempo aleatorio para cortar el cabello a cada cliente. Entre 10 y 15 segundos.
-5. **Cola de Espera:** Implementa una cola para gestionar los clientes que esperan. Esta cola en una primera aproximación puede realizarse como lo que hemos visto en clase de utilizar una [`LinkedList`][LinkedList] por ejemplo, pero en el desarrollo se va a proponer una solución más eficiente.
+5. **Cola de Espera:** Implementa una cola para gestionar los clientes que esperan. Esta cola en una primera aproximación puede realizarse como lo que hemos visto en clase de utilizar una [`LinkedList`][LinkedList] por ejemplo, pero luego veremos las colas ([`Queue`][Queue]) que nos servirán precisamente para este tipo de propósitos.
 
 ## 4. Tareas
 
-1. **Diseñar la Barbería:** Crea clases para representar la barbería, el barbero, y los clientes. Usa una [`Semaphore`][Semaphore] para la cola de espera de los clientes.
+1. **Diseñar la Barbería:** Crea clases para representar la barbería, el barbero, y los clientes. Usa la estructura [`LinkedList`][LinkedList] para la cola de espera de los clientes.~~~~
 2. **Implementar la Lógica de Sincronización:** Usa [`ReentrantLock`][ReentrantLock] para proteger el acceso a la silla del barbero y [`Condition`][Condition] para manejar el sueño y el despertar del barbero, así como la espera de los clientes.
-3. **Simular Entradas y Tiempos Aleatorios:** Utiliza la clase [`ThreadRandom`][ThreadLocalRandom] para simular la llegada aleatoria de clientes y el tiempo que toma cada corte de cabello.
+3. **Simular Entradas y Tiempos Aleatorios:** Utiliza la clase [`ThreadRandom`][ThreadLocalRandom] para simular la llegada aleatoria de clientes y el tiempo que toma cada corte de cabello. Esta clase se utiliza para generar eficientemente números aleatorios desde varios hilos
 4. **Probar la Solución:** Asegúrate de que tu solución maneje correctamente situaciones como el barbero durmiendo cuando no hay clientes, clientes esperando cuando el barbero está ocupado, y clientes yéndose cuando no hay sillas disponibles.
 
 ## 5. Esquema para Trabajar
+
+A continuación se detalla un esquema básico de como podría ser la solución para implementar el barbero y los clientes, aunque posiblemente la mejor solución sea utilizar una clase `Barbería` que gestione los clientes y todo el protocolo de espera.
 
 ```plantuml
 @startuml
@@ -70,7 +73,11 @@ end
 
 Tu programa debe compilar y ejecutarse sin errores, mostrando en la consola el flujo de eventos en la barbería (por ejemplo, llegada de clientes, el barbero cortando el cabello, clientes esperando o yéndose).
 
-## 7. Referencias
+## 7. Consideraciones
+
+Es muy importante que te plantees primero el diseño de la solución antes de empezar a escribir el código. Como se ha comentado repetidas veces en ejercicios anteriores, lo más importante es que las soluciones sean correctas desde el punto de vista de la concurrencia, no que funcionen, por tanto se ha de insistir en la parte del diseño mucho más que en cualquier otro tipo de programa que no acceda a recursos de forma concurrente.
+
+## 8. Referencias
 
 * [Thread]
 * [ReentrantLock]
@@ -78,6 +85,7 @@ Tu programa debe compilar y ejecutarse sin errores, mostrando en la consola el f
 * [Semaphore]
 * [ThreadLocalRandom]
 * [LinkedList]
+* [Queue]
 
 [Thread]: https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html
 [ReentrantLock]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/ReentrantLock.html
@@ -85,3 +93,4 @@ Tu programa debe compilar y ejecutarse sin errores, mostrando en la consola el f
 [Semaphore]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Semaphore.html
 [ThreadLocalRandom]: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html
 [LinkedList]: https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html
+[Queue]: https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html
