@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7db9cb5-d35e-45f7-949d-c50222092ac9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/cipfpbatoi/dam/psp/examen/Barberia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/cipfpbatoi/dam/psp/examen/Barbero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/cipfpbatoi/dam/psp/examen/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c7db9cb5-d35e-45f7-949d-c50222092ac9" name="Changes" comment="&quot;First commit&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/cipfpbatoi/dam/psp/examen/Barberia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cipfpbatoi/dam/psp/examen/Barberia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/cipfpbatoi/dam/psp/examen/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/cipfpbatoi/dam/psp/examen/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,10 +82,22 @@
       <option name="presentableId" value="Default" />
       <updated>1707503789999</updated>
     </task>
+    <task id="LOCAL-00001" summary="&quot;First commit&quot;">
+      <option name="closed" value="true" />
+      <created>1708473820717</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708473820717</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="[MOD] Se ha modificado, revisado y adaptado el problema al nivel a 2º del Superior" />
+    <MESSAGE value="&quot;First commit&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;First commit&quot;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

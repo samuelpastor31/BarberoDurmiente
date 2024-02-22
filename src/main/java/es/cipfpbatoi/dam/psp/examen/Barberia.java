@@ -30,13 +30,12 @@ public class Barberia {
                 barberoDurmiendo.await();
             }
 
-            Cliente cliente = sillas.element();
+            Cliente cliente = sillas.poll();
             this.cliente.signal();
             System.out.println("Barbero : Atender cliente " + cliente.getId());
             lock.unlock();
             Thread.sleep(new Random().nextInt(6000) + 10000);
             lock.lock();
-            sillas.poll();
             System.out.println("Cliente : Cliente " + cliente.getId()+" atendido");
         } finally {
             lock.unlock();
